@@ -1,0 +1,37 @@
+Instalacion allure report https://docs.qameta.io/allure/
+
+
+Para correr todos los features y obtener reporte allure:
+
+    behave -f allure_behave.formatter:AllureFormatter -o allure-results/ --no-skipped --no-capture
+
+Para correr un solo feature y obtener reporte allure:
+
+    behave .\features\test\<Nombre del archivo feature a ejecutar>  -f allure_behave.formatter:AllureFormatter -o allure-results/
+
+Levantar Servidor de pruebas con los resultados
+
+    allure serve allure-results/
+
+Para correr Pruebas bajo la etiqueta de (regression, smoke o integracion) ejecutar:
+
+    behave --tags=@regression -f allure_behave.formatter:AllureFormatter -o allure-results/ --no-skipped --no-capture
+
+Para obtener package y activity_
+
+    correr comando en CMD windows o linux, con la aplicacion abierta en el emulador o dispositivo fisico: adb shell "dumpsys window windows ! grep -E 'mCurrentFocus|mFocusedApp'"
+
+
+Plugins a instalar:
+
+    - tener gherkin Instalado
+
+    - pip install -r requirements.txt
+
+
+Crear requirements
+
+    pip freeze > <Ruta donde alojara el requeriments>\requirements.txt
+
+    Ejemplo: pip freeze > C:\Users\user\Documents\EpidataSA\appiumassistcardpython\requirements.txt
+
